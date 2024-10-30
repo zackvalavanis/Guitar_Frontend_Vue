@@ -14,6 +14,7 @@ export default {
       <h2>{{ guitar.name }}</h2>
       <h2>{{ guitar.age }}</h2>
       <img v-bind:src="guitar.image"/>
+      <button v-on:click="$emit('showGuitar', guitar)">More Info</button>
     </div>
   </header>
 </template>
