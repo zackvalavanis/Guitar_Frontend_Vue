@@ -1,9 +1,33 @@
 <script>
+import axios from 'axios'
+
 export default { 
   props: { 
     guitars: Array, 
   },
-}
+  
+  created: function ()  {
+    this.handleIndexGuitars();
+    }, 
+    methods: { 
+      handleIndexGuitars: function () { 
+        axios.get('http://localhost:3000/guitars.json').then((response) => { 
+          console.log("Guitars Index", response);
+          this.guitars = response.data;
+        })
+
+
+
+
+      }
+    }
+
+
+
+
+
+
+  }
 
 </script>
 
